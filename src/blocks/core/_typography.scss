@@ -4,10 +4,6 @@ $text-font: 'Gotham Pro', 'Roboto', Tahoma, sans-serif;
 $link-font: 'Gotham Pro', 'Roboto', Arial, sans-serif;
 
 // Rules
-a {
-  text-decoration: none;
-}
-
 a, input[type="button"], input[type="submit"], button {
   font-family: $link-font;
 }

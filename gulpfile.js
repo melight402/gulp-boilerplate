@@ -17,39 +17,37 @@ var paths = {
 
     srcSass: ['./src/blocks/core/*.scss', './src/blocks/**/*.scss'],
     srcJs: './src/blocks/**/*.js',
-
     srcHtml: './src/html/index.html',
-
     srcSvg: './src/**/*.svg',
+
     destCss: './src/css',
     destJs: './src/js',
     destSvg: './src/img',
-
     destHtml: './src/index.html'
 };
 
 // Assembling .scss files
-gulp.task('bundleCss', function() {
-  gulp.src(paths.srcSass)
-    .pipe(plugins.sassGlobImport())
-    .pipe(plugins.sass({
-        outputStyle: 'expanded',
-        includePaths: [paths.globalImport, 'node_modules/susy/sass']
-    }).on('error', plugins.sass.logError))
-    .pipe(plugins.concat('style.css'))
-    .pipe(autoprefixer({
-        browsers: ['last 5 versions', 'IE 8', 'IE 9'],
-        cascade: true
-    }))
-    // .pipe(plugins.cssnano())
-    .pipe(gulp.dest(paths.destCss))
-    .pipe(browserSync.reload({
-        stream: true
-    }));
+gulp.task('bundleCss', function () {
+    gulp.src(paths.srcSass)
+        .pipe(plugins.sassGlobImport())
+        .pipe(plugins.sass({
+            outputStyle: 'expanded',
+            includePaths: [paths.globalImport, 'node_modules/susy/sass']
+        }).on('error', plugins.sass.logError))
+        .pipe(plugins.concat('style.css'))
+        .pipe(autoprefixer({
+            browsers: ['last 5 versions', 'IE 8', 'IE 9'],
+            cascade: true
+        }))
+        .pipe(plugins.cssnano())
+        .pipe(gulp.dest(paths.destCss))
+        .pipe(browserSync.reload({
+            stream: true
+        }));
 });
 
 // Assembling index html
-gulp.task('rigger', function() {
+gulp.task('rigger', function () {
     gulp.src(paths.srcHtml)
         .pipe(rigger())
         .pipe(prettify({
@@ -62,18 +60,8 @@ gulp.task('rigger', function() {
         }));
 });
 
-// gulp.task('prettify', function() {
-//     gulp.src(paths.destHtml)
-//         .pipe(prettify({
-//             indent_char: '  ',
-//             indent_size: 1
-//         }))
-//         .pipe(gulp.dest(paths.destHtml));
-// });
-
-
 // Assembling .js files
-gulp.task('bundleJs', function() {
+gulp.task('bundleJs', function () {
     gulp.src(paths.srcJs)
         .pipe(plugins.concat('main.js'))
         .pipe(gulp.dest(paths.destJs))
@@ -83,7 +71,7 @@ gulp.task('bundleJs', function() {
 });
 
 
-gulp.task('watch', function() {
+gulp.task('watch', function () {
     gulp.watch(paths.destHtml, browserSync.reload);
     gulp.watch(paths.srcSass, {
         cwd: './'
@@ -95,7 +83,7 @@ gulp.task('watch', function() {
 
 });
 
-gulp.task('browser-sync', function() {
+gulp.task('browser-sync', function () {
     browserSync({
         server: {
             baseDir: 'src'
@@ -125,7 +113,7 @@ gulp.task('browser-sync', function() {
 // 	.pipe(gulp.dest('dist/img'));
 // });
 
-// Building our app
+// Building app
 // gulp.task ('build', ['clean-dist', 'bundleImg', 'bundleCss'], function() {
 // 	var buildCss = gulp.src('app/css/style.css')
 // 		.pipe(gulp.dest('dist/css'));
