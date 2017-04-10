@@ -2,10 +2,11 @@
   &::after {
     content: '';
     display: block;
+    visibility: hidden;
     clear: both;
   }
 }
 
 @mixin container-min-width {
-  min-width: 480px;
+  min-width: 320px;
 }

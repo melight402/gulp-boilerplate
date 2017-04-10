@@ -3,7 +3,7 @@ $browser-context: 16;
 $base-font-size: 1rem;
 $base-line-height: $base-font-size * 1.25;
 
-$type-scale: (
+$font-size: (
         'small': 0.75rem,
         'medium': $base-font-size,
         'strong': 1.333rem,
@@ -30,21 +30,15 @@ $line-height: (
   @return $pixels / $context * 1rem
 }
 
-;
-
-@function type-scale($level) {
-  @return map-get($type-scale, $level);
+@function font-size($level) {
+  @return map-get($font-size, $level);
 }
-
-;
 
 @function line-height($level) {
   @return map-get($line-height, $level);
 }
 
-;
-
-@mixin type-setting($level: 0) {
-  font-size: type-scale($level);
+@mixin font-settings($level: 0) {
+  font-size: font-size($level);
   line-height: line-height($level);
 }

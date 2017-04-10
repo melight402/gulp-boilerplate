@@ -1,31 +1,33 @@
 {
   "name": "gulp-project-template",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Gulp Project Template",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/axZerk/gulp-project-template.git"
+    "url": "https://github.com/axZerk/gulp-project-tpl"
   },
   "author": "ax.Zerk",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/axZerk/gulp-project-template/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/axZerk/gulp-project-template#readme",
+  "homepage": "",
   "devDependencies": {
     "browser-sync": "^2.17.5",
+    "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-concat": "^2.6.0",
     "gulp-cssnano": "^2.1.2",
-    "gulp-load-plugins": "^1.4.0",
+    "gulp-imagemin": "^3.2.0",
     "gulp-rigger": "^0.5.8",
     "gulp-sass": "^3.1.0",
     "gulp-sass-glob-import": "^0.1.0",
+    "gulp-sourcemaps": "^2.5.1",
+    "gulp-uglify": "^2.1.2",
+    "imagemin-pngquant": "^5.0.0",
     "susy": "^2.2.12"
   }
 }

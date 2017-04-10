@@ -2,85 +2,127 @@
 
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
-    concat = require('gulp-concat'),
-    cssnano = require('gulp-cssnano'),
-    browserSync = require('browser-sync'),
+    sourcemaps = require('gulp-sourcemaps'),
     autoprefixer = require('gulp-autoprefixer'),
-    plugins = require('gulp-load-plugins')(),
+    uglify = require('gulp-uglify'),
+    cssnano = require('gulp-cssnano'),
+    concat = require('gulp-concat'),
+    imagemin = require('gulp-imagemin'),
+    pngquant = require('imagemin-pngquant'),
+    browserSync = require('browser-sync'),
+    del = require('del'),
+    sassGlobImport = require('gulp-sass-glob-import'),
     rigger = require('gulp-rigger');
 
 var paths = {
-    globalImport: './src/blocks/core/tools/',
-
-    srcSass: ['./src/blocks/core/*.scss', './src/blocks/**/*.scss'],
-    srcJs: './src/blocks/**/*.js',
-    srcHtml: './src/html/index.html',
-
-    destCss: './src/css',
-    destJs: './src/js',
-    destHtml: './src/index.html'
+    src: {
+        html: 'src/*.html',
+        js: 'src/js/**/*.js',
+        cssGlobalImport: './src/sass/core/tools/',
+        css: ['src/sass/core/*.scss', './src/sass/**/*.scss'],
+        img: 'src/img/**/*.+(png|jpg|gif|svg)',
+        fonts: 'src/fonts/**/*.*'
+    },
+    build: {
+        html: 'build/',
+        js: 'build/js/',
+        css: 'build/css/',
+        img: 'build/img/',
+        fonts: 'build/fonts/'
+    },
+    clean: './build'
 };
+
+var serverConfig = {
+    server: {
+        baseDir: "./build"
+    },
+    host: 'localhost',
+    port: 9000,
+    logPrefix: "Over9000"
+};
+
+// Assembling .html
+gulp.task('bundleHtml', function () {
+    gulp.src(paths.src.html)
+        .pipe(rigger())
+        .pipe(gulp.dest(paths.build.html))
+        .pipe(browserSync.reload({stream: true}));
+});
 
 // Assembling .scss files
 gulp.task('bundleCss', function () {
-    gulp.src(paths.srcSass)
-        .pipe(plugins.sassGlobImport())
-        .pipe(plugins.sass({
+    return gulp.src(paths.src.css)
+        .pipe(sassGlobImport())
+        .pipe(sourcemaps.init())
+        .pipe(sass({
             outputStyle: 'expanded',
-            includePaths: [paths.globalImport, 'node_modules/susy/sass']
-        }).on('error', plugins.sass.logError))
-        .pipe(plugins.concat('style.css'))
+            includePaths: [paths.src.cssGlobalImport, 'node_modules/susy/sass']
+        }).on('error', sass.logError))
+        .pipe(concat('style.min.css'))
         .pipe(autoprefixer({
-            browsers: ['last 5 versions', 'IE 8', 'IE 9'],
+            browsers: ['last 5 versions', 'IE 9'],
             cascade: true
         }))
-        .pipe(plugins.cssnano())
-        .pipe(gulp.dest(paths.destCss))
-        .pipe(browserSync.reload({
-            stream: true
-        }));
-});
-
-// Assembling index html
-gulp.task('rigger', function () {
-    gulp.src(paths.srcHtml)
-        .pipe(rigger())
-        .pipe(gulp.dest('src/'))
-        .pipe(browserSync.reload({
-            stream: true
-        }));
+        .pipe(cssnano())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(paths.build.css))
+        .pipe(browserSync.reload({stream: true}));
 });
 
 // Assembling .js files
 gulp.task('bundleJs', function () {
-    gulp.src(paths.srcJs)
-        .pipe(plugins.concat('main.js'))
-        .pipe(gulp.dest(paths.destJs))
-        .pipe(browserSync.reload({
-            stream: true
-        }));
+    return gulp.src(paths.src.js)
+        .pipe(concat('scripts.min.js'))
+        .pipe(sourcemaps.init())
+        .pipe(uglify())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(paths.build.js))
+        .pipe(browserSync.reload({stream: true}));
 });
 
+// Optimizing images
+gulp.task('bundleImg', function () {
+    return gulp.src(paths.src.img)
+        .pipe(imagemin({
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()],
+            interlaced: true
+        }))
+        .pipe(gulp.dest(paths.build.img))
+        .pipe(browserSync.reload({stream: true}));
+});
 
+// Bundling fonts
+gulp.task('bundleFonts', function () {
+    return gulp.src(paths.src.fonts)
+        .pipe(gulp.dest(paths.build.fonts))
+});
+
+// Watching for changes in src files
 gulp.task('watch', function () {
-    gulp.watch(paths.destHtml, browserSync.reload);
-    gulp.watch(paths.srcSass, {
-        cwd: './'
-    }, ['bundleCss']);
-    gulp.watch(paths.srcJs, {
-        cwd: './'
-    }, ['bundleJs']);
-    gulp.watch('src/html/*.html', ['rigger']);
+    gulp.watch(paths.build.html, browserSync.reload);
 
+    gulp.watch(paths.src.html, ['bundleHtml']);
+    gulp.watch(paths.src.css, {cwd: './'}, ['bundleCss']);
+    gulp.watch(paths.src.js, {cwd: './'}, ['bundleJs']);
+    gulp.watch(paths.src.img, ['bundleImg']);
+    gulp.watch(paths.src.fonts, ['bundleFonts']);
 });
 
-gulp.task('browser-sync', function () {
-    browserSync({
-        server: {
-            baseDir: 'src'
-        },
-        notify: false
-    });
+// BrowserSync server
+gulp.task('webServer', function () {
+    browserSync(serverConfig);
 });
 
-gulp.task('default', ['browser-sync', 'rigger', 'bundleCss', 'bundleJs', 'watch']);
+// Cleaning build dir
+gulp.task('clean:build', function () {
+    return del.sync(paths.clean);
+});
+
+// General build task
+gulp.task('build', ['bundleHtml', 'bundleCss', 'bundleJs', 'bundleFonts', 'bundleImg']);
+
+// Default task to run
+gulp.task('default', ['clean:build', 'build', 'webServer', 'watch']);
