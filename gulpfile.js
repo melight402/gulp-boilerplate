@@ -12,7 +12,8 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync'),
     del = require('del'),
     sassGlobImport = require('gulp-sass-glob-import'),
-    rigger = require('gulp-rigger');
+    rigger = require('gulp-rigger'),
+    babel = require("gulp-babel");
 
 var paths = {
     src: {
@@ -75,8 +76,11 @@ gulp.task('bundleJs', function () {
     return gulp.src(paths.src.js)
         .pipe(concat('scripts.min.js'))
         .pipe(sourcemaps.init())
-        .pipe(uglify())
+        .pipe(babel({
+            presets: ['env', 'es2015']
+        }))
         .pipe(sourcemaps.write())
+        .pipe(uglify())
         .pipe(gulp.dest(paths.build.js))
         .pipe(browserSync.reload({stream: true}));
 });
