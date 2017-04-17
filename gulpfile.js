@@ -31,6 +31,9 @@ var paths = {
     img: 'build/img/',
     fonts: 'build/fonts/'
   },
+  watch: {
+    html: 'src/**/*.html'
+  },
   clean: './build'
 };
 
@@ -106,9 +109,7 @@ gulp.task('bundleFonts', function () {
 
 // Watching for changes in src files
 gulp.task('watch', function () {
-  gulp.watch(paths.build.html, browserSync.reload);
-
-  gulp.watch(paths.src.html, ['bundleHtml']);
+  gulp.watch(paths.watch.html, {cwd: './'}, ['bundleHtml']);
   gulp.watch(paths.src.css, {cwd: './'}, ['bundleCss']);
   gulp.watch(paths.src.js, {cwd: './'}, ['bundleJs']);
   gulp.watch(paths.src.img, ['bundleImg']);
