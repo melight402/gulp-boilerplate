@@ -43,7 +43,8 @@ var serverConfig = {
   },
   host: 'localhost',
   port: 9000,
-  logPrefix: "Over9000"
+  logPrefix: "NASA",
+  notify: false
 };
 
 // Assembling .html
