@@ -39,7 +39,7 @@ var paths = {
 
 var serverConfig = {
   server: {
-    baseDir: "./build"
+    baseDir: './build'
   },
   host: 'localhost',
   port: 9000,
@@ -105,7 +105,7 @@ gulp.task('bundleImg', function () {
 // Bundling fonts
 gulp.task('bundleFonts', function () {
   return gulp.src(paths.src.fonts)
-    .pipe(gulp.dest(paths.build.fonts))
+    .pipe(gulp.dest(paths.build.fonts));
 });
 
 // Watching for changes in src files
