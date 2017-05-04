@@ -13,7 +13,7 @@ var gulp = require('gulp'),
   del = require('del'),
   sassGlobImport = require('gulp-sass-glob-import'),
   rigger = require('gulp-rigger'),
-  babel = require("gulp-babel");
+  babel = require('gulp-babel');
 
 var paths = {
   src: {
@@ -43,7 +43,7 @@ var serverConfig = {
   },
   host: 'localhost',
   port: 9000,
-  logPrefix: "NASA",
+  logPrefix: 'NASA',
   notify: false
 };
 
@@ -66,7 +66,7 @@ gulp.task('bundleCss', function () {
     }).on('error', sass.logError))
     .pipe(concat('style.min.css'))
     .pipe(autoprefixer({
-      browsers: ['last 5 versions', 'IE 9'],
+      browsers: ['last 5 versions'],
       cascade: true
     }))
     .pipe(cssnano())
