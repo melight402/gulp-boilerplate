@@ -62,9 +62,9 @@ gulp.task('bundleCss', function () {
     .pipe(sourcemaps.init())
     .pipe(sass({
       outputStyle: 'expanded',
-      includePaths: [paths.src.cssGlobalImport, 'node_modules/susy/sass']
+      includePaths: [paths.src.cssGlobalImport]
     }).on('error', sass.logError))
-    .pipe(concat('style.min.css'))
+    .pipe(concat('styles.min.css'))
     .pipe(autoprefixer({
       browsers: ['last 5 versions'],
       cascade: true
@@ -81,7 +81,7 @@ gulp.task('bundleJs', function () {
     .pipe(concat('scripts.min.js'))
     .pipe(sourcemaps.init())
     .pipe(babel({
-      presets: ['env', 'es2015']
+      presets: ['env']
     }))
     .pipe(sourcemaps.write())
     .pipe(uglify())

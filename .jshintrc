@@ -77,6 +77,6 @@
 
   // Custom Globals
   "globals"       : {
-    "_": false
+    "_": true
   }
 }
