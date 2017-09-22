@@ -2,9 +2,6 @@
  * Gulp Project Boilerplate, Copyright © 2017, Alexander Repeta <axzerk@gmail.com>
  */
 
-
-//  ,
-
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const babel = require('gulp-babel');
@@ -21,6 +18,7 @@ const cache = require('gulp-cache');
 const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
 const rigger = require('gulp-rigger');
+const htmlmin = require('gulp-htmlmin');
 
 // Project paths
 const paths = {
@@ -49,8 +47,11 @@ gulp.task('bundleHtml', () => {
   return gulp.src(paths.src.html)
     .pipe(gulpCached('html'))
     .pipe(rigger())
+    .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest(paths.dist.html))
-    .pipe(browserSync.reload({stream: true}));
+    .pipe(browserSync.reload({
+      stream: true
+    }));
 });
 
 // Assembling .scss files
