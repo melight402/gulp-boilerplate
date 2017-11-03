@@ -10,10 +10,11 @@
     height: 25px;
     margin-top: 8px;
     margin-left: 4px;
-
-    img{
-      height: 100%;
-      width: 100%;
+    a{
+      img{
+        height: 100%;
+        width: 100%;
+      }
     }
   }
   .upper-menu-items{
@@ -36,12 +37,13 @@
       }
     }
     button{
-      background-color: $orange;
+      background-color: green;
       width: 200px;
       height: 47px;
       border-radius: 30px;
       border: 3px solid white;
-      box-shadow: 0 0 22px 7px rgba(225,225,225,1);
+      box-shadow: 0 0 40px 17px rgba(225,225,225,1);
+      z-index: 1;
       span{
         color: #ffffff;
         font: 14px Poppins;
