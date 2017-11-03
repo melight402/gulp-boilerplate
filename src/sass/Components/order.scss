@@ -1,0 +1,47 @@
+@import "../core/variables";
+
+.order{
+  height: 406px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .order-container{
+    height: 279px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    h2{
+      font: 36px Poppins;
+      font-weight: 600;
+      text-indent: 11px;
+      word-spacing: 5px;
+    }
+    p{
+      font: 18px Poppins;
+      width: 52%;
+      text-align: center;
+      padding-bottom: 34px;
+    }
+    .order-button{
+      height: 58px;
+      width: 227px;
+      margin-bottom: 44px;
+      margin-left: 10px;
+      background-color: $blue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 20px 4px #dbeeff;
+      border-radius: 30px;
+      cursor: pointer;
+      span {
+        text-transform: uppercase;
+        color: white;
+        font: 14px Poppins;
+        font-weight: 400;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}
