@@ -1,0 +1,27 @@
+.description{
+  height: 235px;
+  background: linear-gradient(to right, #2b4ebd 0%,#3093f1 99%);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .description-round-image{
+    position: absolute;
+    top: -64px;
+    margin-left: 6px;
+  }
+  .description-text{
+    width: 30%;
+    p{
+      font: 24px Poppins;
+      color: white;
+      text-align: center;
+    };
+    .first-line{
+      padding-bottom: 7px;
+    };
+    .second-line{
+      padding-bottom: 5px;
+    };
+  }
+}
