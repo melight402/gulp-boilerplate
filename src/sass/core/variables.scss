@@ -13,3 +13,15 @@ $background-grey: #f4f6f8;
   font: 16px poppins;
   font-weight: 400;
 }
+
+.vr-button{
+  height: 58px;
+  width: 227px;
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 20px 4px #dbeeff;
+  border-radius: 30px;
+  cursor: pointer;
+}
