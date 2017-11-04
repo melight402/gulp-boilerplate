@@ -1,0 +1,73 @@
+@import "../core/variables";
+
+.reviews{
+  height: 740px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  h2{
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding-top: 82px;
+  }
+  p{
+    width: 25%;
+    text-align: center;
+    font-size: 18px;
+    padding-top: 16px;
+  }
+  .reviews-items{
+    display: flex;
+    justify-content: space-between;
+    width: 62%;
+    height: 37%;
+    padding-top: 57px;
+    .review-item-container{
+      display: flex;
+      justify-content: space-between;
+      width: 31%;
+      .quotes{
+        img{
+          width: 17px;
+          height: 13px;
+        }
+      }
+      .review-item{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-left: 11px;
+        mark{
+          font: 16px Poppins;
+          line-height: 2em;
+          margin-top: -5px;
+        }
+        .stars{
+          width: 90px;
+          height: 15px;
+          img{
+            width: 100%;
+            height: 100%;
+          }
+        }
+        h5{}
+        p{}
+      }
+    }
+  }
+  .featured-on{
+    padding-top: 81px;
+  }
+  .partners{
+    display: flex;
+    padding-top: 28px;
+    width: 60%;
+    justify-content: space-between;
+    align-items: center;
+    .partners-item{
+      img{}
+    }
+  }
+}
