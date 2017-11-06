@@ -121,3 +121,25 @@
     }
   }
 }
+
+@media screen and (max-width: 1250px){
+  .products{
+    height: auto;
+    h2{
+      width: 95%;
+      text-align: center;
+    }
+    .regular-text{
+      width: 95%;
+      text-align: center;
+    }
+    .products-items{
+      flex-flow: row wrap;
+      justify-content: center;
+      max-width: 610px;
+      .product-item{
+        margin-top: 25px;
+      }
+    }
+  }
+}
