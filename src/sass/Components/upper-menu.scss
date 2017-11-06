@@ -3,13 +3,13 @@
 .upper-menu{
   display: flex;
   justify-content: space-between;
-  max-width: 1170px;
+  max-width: 1211px;
   margin: 0 auto;
-  padding-top: 22px;
+  padding: 22px 20px 0 20px;
   .upper-menu-img{
     height: 25px;
     margin-top: 11px;
-    margin-left: 4px;
+    margin-left: 6px;
     a{
       img{
         height: 100%;
@@ -26,7 +26,7 @@
       justify-content: space-between;
       width: 490px;
       li{
-        line-height: 52px;
+        line-height: 56px;
         a{
           text-decoration: none;
           color: black;
@@ -53,6 +53,27 @@
         font-weight: 400;
         margin-right: 1px;
         letter-spacing: 1px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .upper-menu{
+    flex-direction: column;
+    padding: 0;
+    width: 30%;
+    .upper-menu-img{
+      display: none;
+    }
+    .upper-menu-items{
+      width: 30%;
+      margin: 0 auto;
+      flex-direction: column;
+      align-items: center;
+      ul{
+        flex-direction: column;
+        align-items: center;
       }
     }
   }
