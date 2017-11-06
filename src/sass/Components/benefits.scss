@@ -1,7 +1,7 @@
 @import "../core/variables";
 
 .benefits{
-  height: 655px;
+  min-height: 655px;
   background-color: $background-grey;
   .benefits-title{
     margin: 0 auto;
@@ -28,8 +28,8 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    max-width: 1150px;
-    height: 285px;
+    width: 60%;
+    height: 80%;
     margin: 0 auto;
     .title-item{
       display: flex;
@@ -128,5 +128,47 @@
       }
     }
 
+  }
+}
+
+@media screen and (max-width: 762px) {
+  .benefits{
+    .benefits-title{
+      width: 90%;
+    }
+    .title-items{
+      width: 95%;
+      justify-content: center;
+      flex-flow: row wrap;
+      .title-item{
+        width: 355px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 763px) and (max-width: 1136px){
+  .benefits{
+    .benefits-title{
+      width: 80%;
+    }
+    .title-items{
+      justify-content: space-around;
+      width: 80%;
+      .title-item{
+        width: 355px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1137px){
+  .benefits{
+    .benefits-title{
+      width: 80%;
+    }
+    .title-items{
+      width: 80%;
+    }
   }
 }
