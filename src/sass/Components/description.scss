@@ -28,3 +28,24 @@
     };
   }
 }
+
+@media screen and (max-width: 900px){
+  .description{
+    .description-round-image{
+      display: none;
+    }
+    .description-text{
+      width: 80%;
+    }
+
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1050px){
+  .description{
+    .description-text{
+      width: 50%;
+    }
+  }
+}
+
