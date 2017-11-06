@@ -29,4 +29,21 @@
   }
 }
 
+@media screen and (max-width: 650px) {
+  .features{
+    display: none;
+  }
+}
 
+@media screen and (min-width: 651px) and (max-width: 900px){
+  .features{
+    h2{
+      width: 80%;
+      text-align: center;
+      padding-top: 20px;
+    }
+    p{
+      width: 92%;
+    }
+  }
+}
