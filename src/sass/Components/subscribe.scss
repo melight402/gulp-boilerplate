@@ -30,6 +30,7 @@
     justify-content: space-between;
     align-items: center;
     background-color: white;
+    box-shadow: 0 0 40px 20px #eceef0;
     input[type="search"]{
       padding-left: 33px;
       border: none;
@@ -40,8 +41,7 @@
       vertical-align: middle;
       font: 16px Poppins;
       font-weight: 400;
-      padding-top: 4px;
-      text-indent: -1px;
+
     }
     input[type="submit"]{
       height: 55px;
