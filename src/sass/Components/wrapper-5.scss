@@ -1,0 +1,104 @@
+@mixin background-linear-gradient($where, $firstColor, $lastColor) {
+  background: linear-gradient($where, $firstColor, $lastColor);
+}
+
+.container .wrapper-5{
+  padding-top: 5%;
+  .row{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    .col-6:first-child{
+      padding-top: 12.1%;
+      *{
+        text-align: start;
+      }
+      &:before{
+        position: absolute;
+        top: 22.2%;
+        left: 19.5%;
+        content: "__";
+        color: red;
+        font-size: 2.5em;
+        font-weight: bolder;
+      ;
+      }
+      h1{
+        padding: 0 13% 0 1.2%;
+        word-spacing: .15em;
+        font-size: 2.625em;
+        line-height: 1.42em;
+        font-family: Poppins,sans-serif;
+      }
+      h4{
+        color: #676767;
+        padding: 6.4% 10% 0 1%;
+        word-spacing: -0.09em;
+        font-size: 1.3em;
+        line-height: 1.51em;
+        font-family: Open Sans,sans-serif;
+      }
+      p{
+        color: #8d8d8d;
+        padding: 7.5% 11% 0 1%;
+        word-spacing: -0.06em;
+        line-height: 1.85em;
+        font-size: 1.2em;
+        font-family: Open Sans,sans-serif;
+      }
+    }
+    .col-6:last-child{
+      display: flex;
+      //background: url('../../img/1112.png') no-repeat ;
+      background-size: 125%;
+      min-height: 787px;
+      .box{
+        position: relative;
+        width: 260px;
+        height: 290px;
+        *{
+          color: #ffffff;
+
+        }
+        img{
+          width: 10%;
+          height: 10%;
+        }
+        h3{
+          font-size: 1.375em;
+          font-family: Poppins,sans-serif;
+        }
+        p{
+          font-size: 1em;
+          font-family: Open Sans,sans-serif;
+        }
+      }
+      .col-50:first-child{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 14% 0 16% 4%;
+        .box:first-child{
+          @include background-linear-gradient(to top right, #41aedc, #06f0f3);
+        }
+        .box:last-child{
+          @include background-linear-gradient(to top right, #00d7dd, #06f0f3);
+        }
+      }
+      .col-50:last-child{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1% 0 29% 5%;
+        .box:first-child{
+          @include background-linear-gradient(to top right, #00d7dd, #06f0f3);
+        }
+        .box:last-child{
+          @include background-linear-gradient(to top right, #00d7dd, #06f0f3);
+        }
+      }
+
+    }
+
+  }
+}
