@@ -3,9 +3,14 @@
   background: linear-gradient($where, $firstColor, $lastColor);
 }
 .container .wrapper-1 {
-  position: relative;
-  max-height: 1005px;
+  min-height: 1000px;
   @include background-linear-gradient(to top left, #00d7dd, #08a7dd);
+  .row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
   .row:first-child {
     padding-top: 3.4%;
     color: #ffffff;
@@ -47,7 +52,7 @@
   }
   .row:last-child {
     position: relative;
-    padding: 11.35% 0 15.7% 0;
+    padding: 11.35% 0 0 0;
     .cols:first-child {
       * {
         color: #ffffff;
@@ -78,12 +83,18 @@
         justify-content: space-between;
         padding: 10.6% 31% 0 0.6%;
         a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
           color: #ffffff;
           text-decoration: none;
+          .imageWrapper{
+            width: 15%;
+            height: 50%;
+          }
         }
         a:first-child {
           background-color: #252525;
-          padding: 3.5% 2.95% 2% 5%;
           width: 11.8em;
           height: 3.8em;
           span {
@@ -91,13 +102,11 @@
           }
         }
         a:last-child {
-          padding: 2.5% 0% 3% 4%;
           border: 1px solid #ffffff;
           background: none;
           width: 12em;
           height: 3.8em;
           span {
-            padding: 9% 0 0 0;
             font-size: 1.07em;
           }
         }
