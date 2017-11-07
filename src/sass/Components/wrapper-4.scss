@@ -1,0 +1,62 @@
+.container .wrapper-4{
+  .row{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 5% 0 0 0;
+    .cols:first-child{
+
+      max-height: 735px;
+      img{
+        position: absolute;
+        max-width: 38.7%;
+        top: 11.2%;
+        left: 10.5%;
+      }
+    }
+    .cols:last-child{
+      padding: 8.65% 0 0 0;
+      *{
+        text-align: start;
+      }
+      h1{
+        padding: 0 8% 0 5%;
+        word-spacing: 0.1em;
+
+        font-size: 2.625em;
+        line-height: 1.42em;
+        font-family: 'Poppins', sans-serif;
+      }
+      p{
+        padding: 5% 9% 0 4.5%;
+        word-spacing: 0.03em;
+        letter-spacing: 0.001em;
+        line-height: 1.65em;
+        font-size: 1.25em;
+        font-family: 'Open Sans', sans-serif;
+      }
+      ul{
+        padding: 10.2% 4% 4%;
+        li:nth-child(3){
+          line-height: 2.2em;
+        }
+        li{
+          display:flex;
+          i{
+            padding: 0.5% 4% 0 0;
+            font-size: 1.6em;
+            font-weight: 100;
+            color: red;
+          }
+          span{
+            padding: 0 0 0 0;
+            word-spacing: 0.01em;
+            font-size: 1.125em;
+            font-family: 'Poppins', sans-serif;
+          }
+
+        }
+      }
+    }
+  }
+}

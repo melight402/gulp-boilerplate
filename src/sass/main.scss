@@ -17,13 +17,15 @@ body {
     width: 100%;
     min-height: 8000px;
     margin: 0 auto;
-    background-color: #f9fafb;
-    //background: url("../img/06_Index.jpg") no-repeat;
-    //background-size: 100%;
+    //background-color: #f9fafb;
+    background: url("../img/06_Index.jpg") no-repeat;
+    background-size: 100%;
   }
   .wrapper{
     display: flex;
     flex-direction: column;
+
+    justify-content: center;
   }
 
   .container .cols {
@@ -52,13 +54,13 @@ body {
       width: 25%;
     }
     .container .cols.col-4 {
-      width: 33.333333333333333%;
+      width: 18.8%;
     }
     .container .cols.col-5 {
       width: 41.666666666666667%;
     }
     .container .cols.col-6 {
-      width: 30.46875%;
+      width: 30.8%;
     }
     .container .cols.col-7 {
       width: 58.333333333333333%;
