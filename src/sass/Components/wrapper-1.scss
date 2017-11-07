@@ -1,0 +1,110 @@
+
+@mixin background-linear-gradient($where, $firstColor, $lastColor) {
+  background: linear-gradient($where, $firstColor, $lastColor);
+}
+.container .wrapper-1 {
+  position: relative;
+  max-height: 1005px;
+  @include background-linear-gradient(to top left, #00d7dd, #08a7dd);
+  .row:first-child {
+    padding-top: 3.4%;
+    color: #ffffff;
+    .cols:first-child {
+      padding: 0.5% 0 0 0.2%;
+      p {
+
+        float: left;
+        font-size: 1.75em;
+        font-family: 'Futura', sans-serif;
+      }
+    }
+    .cols:last-child {
+      padding: 0 0.4% 0 0;
+      button {
+        float: right;
+        font-family: 'Poppins', sans-serif;
+        border: 0;
+        background: inherit;
+        font-size: 1em;
+        color: #ffffff;
+      }
+      button:first-child {
+        width: 7.3em;
+        height: 2.45em;
+        border: 2px solid #ffffff;
+        border-radius: 20px;
+        letter-spacing: 1px;
+      }
+      button:last-child {
+        width: 7.4em;
+        height: 2.45em;
+        margin: 0 2.7% 0 0;
+        font-size: 1em;
+        letter-spacing: 2px;
+
+      }
+    }
+  }
+  .row:last-child {
+    position: relative;
+    padding: 11.35% 0 15.7% 0;
+    .cols:first-child {
+      * {
+        color: #ffffff;
+        text-align: start;
+      }
+      p:first-child {
+        font-size: 1.4em;
+        font-family: 'Open Sans', sans-serif;
+      }
+      h1 {
+        text-align: start;
+        font-family: 'Poppins', sans-serif;
+        font-size: 3.15em;
+        padding: 4.1% 0 0 0.4%;
+        line-height: 142%;
+      }
+      h1 + p {
+        font-family: 'Open Sans', sans-serif;
+        color: #76dff3;
+        padding: 7.5% 4% 0 0.5%;
+        line-height: 1.6em;
+        word-spacing: -0.06em;
+        font-size: 1.3em;
+      }
+      div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 10.6% 31% 0 0.6%;
+        a {
+          color: #ffffff;
+          text-decoration: none;
+        }
+        a:first-child {
+          background-color: #252525;
+          padding: 3.5% 2.95% 2% 5%;
+          width: 11.8em;
+          height: 3.8em;
+          span {
+            font-size: 1.3em;
+          }
+        }
+        a:last-child {
+          padding: 2.5% 0% 3% 4%;
+          border: 1px solid #ffffff;
+          background: none;
+          width: 12em;
+          height: 3.8em;
+          span {
+            padding: 9% 0 0 0;
+            font-size: 1.07em;
+          }
+        }
+      }
+    }
+    .cols:last-child {
+    }
+  }
+
+}

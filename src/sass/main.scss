@@ -1,1 +1,269 @@
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  img {
+    max-width: 100%;
+  }
+}
+
+body {
+  font: 100%/1.5em Arial, sans-serif;
+  .container {
+    width: 100%;
+    height: 8000px;
+    margin: 0 auto;
+    //background-color: #f9fafb;
+    background: url("../img/06_Index.jpg") no-repeat;
+    background-size: 100%;
+  }
+  .row{
+    display: flex;
+    flex-direction: row;
+  }
+  .container .cols {
+    text-align: center;
+  }
+  #root:before,
+  #root:after,
+  .row:before,
+  .row:after {
+    content: '';
+    display: table;
+  }
+  .row:after {
+    clear: both;
+  }
+
+
+  @media screen and (min-width: 960px) {
+    .container .cols.col-1 {
+      width: 8.333333333333333%;
+    }
+    .container .cols.col-2 {
+      width: 16.666666666666667%;
+    }
+    .container .cols.col-3 {
+      width: 25%;
+    }
+    .container .cols.col-4 {
+      width: 33.333333333333333%;
+    }
+    .container .cols.col-5 {
+      width: 41.666666666666667%;
+    }
+    .container .cols.col-6 {
+      width: 50%;
+    }
+    .container .cols.col-7 {
+      width: 58.333333333333333%;
+    }
+    .container .cols.col-8 {
+      width: 66.666666666666667%;
+    }
+    .container .cols.col-9 {
+      width: 75%;
+    }
+    .container .cols.col-10 {
+      width: 83.333333333333333%;
+    }
+    .container .cols.col-11 {
+      width: 91.666666666666667%;
+    }
+    .container .cols.col-12 {
+      width: 100%;
+    }
+
+
+
+
+  }
+  @media screen and (max-width: 959px) {
+    .container .cols.col-1,
+    .container .cols.col-2,
+    .container .cols.col-3,
+    .container .cols.col-4,
+    .container .cols.col-5,
+    .container .cols.col-6,
+    .container .cols.col-7,
+    .container .cols.col-8,
+    .container .cols.col-9,
+    .container .cols.col-10,
+    .container .cols.col-11,
+    .container .cols.col-12 {
+      width: 100%;
+    }
+  }
+}
+
+/* pattern
+.row {
+    .cols:first-child{
+
+    }
+    .cols:last-child{
+
+    }
+
+}
+*/
+
+/*
+    .col-2 {
+      div:first-child {
+        padding: 11% 0 0 0;
+        padding: 4.5% 4.95% 3% 0%;
+      }
+      div:last-child {
+        position: relative;
+        height: 100%;
+        img{
+          position: absolute;
+          left: 15%;
+          bottom: 0;
+        }
+      }
+    ;
+    }
+
+  }
+
+.container-2{
+  height: 945px;
+  .row:first-child{
+
+  }
+  .row-2 {
+    .col-1 {
+      div:first-child {
+
+      }
+      div:last-child {
+
+      }
+    ;
+    }
+    .col-2 {
+      div:first-child {
+
+      }
+      div:last-child {
+
+      }
+    ;
+    }
+    .col-3 {
+      div:first-child {
+
+      }
+      div:last-child {
+
+      }
+    ;
+    }
+  }
+}
+
+*/
+
+/*
+
+//font-family: 'Open Sans', sans-serif;
+.column{
+    display: flex;
+    flex-direction: column;
+}
+.cols-1{}
+.cols2{}
+
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.halfWidth{
+    width: 50%;
+}
+.halfHeight{
+    height: 50%;
+}
+.relative{
+    position: relative;
+}
+.absolute{
+    position: absolute;
+}
+#root{
+    width: 100%;
+    margin: 0 auto;
+    background: url("../../public/06_Index.jpg") no-repeat;
+    background-size: 100%;
+    text-align: center;
+    .block{
+        position: relative;
+
+    }
+    .block1{
+        @include background-linear-gradient(to top left, #00d7dd, #08a7dd);
+
+        .row:first-child{
+            height: 20%;
+            p{  padding: 6.6% 13.5% 0 0;
+                font-size: 1.7rem;
+                color: #ffffff;
+                font-family: Futura;
+            }
+            div:last-child{
+                button{
+                    font-family: 'Poppins', sans-serif;
+                    border: 0;
+                    background: inherit;
+                    font-size: 1rem;
+                    color: #ffffff;
+                }
+                button:first-child{
+                    left: 36.6%;
+                    top: 36%;
+                    font-size: 1rem;
+                    letter-spacing: 2px;
+
+                }
+                button:last-child{
+                    top: 20%;
+                    right:20%;
+                }
+            }
+        }
+        .row:last-child{
+            height: 80%;
+        }
+
+    }
+    .block2{
+
+    }
+    .block3{
+        height: 850px;
+    }
+    .block4{
+        height: 975px;
+    }
+    .block5{
+        height:1200px;
+    }
+    .block6{
+        height: 850px;
+    }
+    .block7{
+        height: 900px;
+    }
+    .block8{
+        height: 600px;
+    }
+    .block9{
+        height: 750px;
+    }
+    .block10{
+        background: #fbfeff
+    }
+}*/
