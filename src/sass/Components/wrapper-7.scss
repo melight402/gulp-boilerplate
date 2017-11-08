@@ -9,6 +9,7 @@
     .cols:first-child{
       position: relative;
       .slider{
+        padding: 5% 16% 23%;
         width: 495px;
         height: 614px;
         //background-color: #6d69ff;
@@ -17,7 +18,7 @@
         left: 35.3%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
         *{
           text-align: start;
         }
@@ -26,6 +27,9 @@
           color: #ffffff;
         }
         div:first-child{
+          left: 4%;
+          top: 24.5%;
+          position: relative;
           font-family: Poppins,sans-serif;
           font-size: 9.5em;
         }
@@ -34,8 +38,30 @@
           flex-wrap: wrap;
           font-family: Poppins, sans-serif;
           font-size: 1.5em;
-        }
+          font-style: italic;
+          line-height: 2.1em;
+          word-spacing: .2em;
+          padding: 19.5% 0 0 6.4%;
+          }
         div:last-child{
+          padding: 0 0 3% 6%;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          &>i{
+            font-size: 3.5em;
+            width: 50px;
+            height: 50px;
+          }
+          h3{
+            padding:0 0 0 9%;
+            font-size: 1.3em;
+            line-height: 1em;
+          }
+          span{
+            padding: 9% 0 0 31%;
+            font-size: 0.8em;
+          }
 
         }
       }
