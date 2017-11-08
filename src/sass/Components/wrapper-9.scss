@@ -1,0 +1,9 @@
+@mixin background-linear-gradient($where, $firstColor, $lastColor) {
+  background: linear-gradient($where, $firstColor, $lastColor);
+}
+
+.container .wrapper-9{
+  .row{
+
+  }
+}
