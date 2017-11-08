@@ -1,6 +1,7 @@
 .container .wrapper-2 {
   padding-bottom: 6%;
   .row {
+    flex-direction: column;
     .cols:first-child {
       font-family: 'Poppins', sans-serif;
       padding: 9.3% 0 0;

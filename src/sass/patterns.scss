@@ -1,63 +1,63 @@
-@mixin background-linear-gradient($where, $firstColor, $lastColor) {
-  background: linear-gradient($where, $firstColor, $lastColor);
-}
-
-
-
-.card-1 {
-  background: #ffffff;
-  padding: 3.6% 0 0 0;
-  img {
-    width: 110px;
-    height: 98px;
-  }
-  .title {
-    padding: 11% 0 0 1%;
-    font-size: 1.35em;
-  }
-  .text {
-    font-size: 1.15em;
-    padding: 7% 15% 8.3% 16%;
-    letter-spacing: -.02em;
-    line-height: 1.65em;
-  }
-  .button {
-    width: 130px;
-    height: 45px;
-    background: none;
-    box-shadow: 0 0 1px 1px grey;
-  }
-}
-
-.card-2 {
-  position: relative;
-  width: 260px;
-  height: 290px;
-  @include background-linear-gradient(to top right, #41aedc, #06f0f3);
-  * {
-    color: #ffffff;
-
-  }
-  img {
-    position: absolute;
-    width: 63px;
-    height: 50px;
-    left: 14%;
-    top: 18%;
-  }
-  h3 {
-    font-size: 1.375em;
-    font-family: Poppins, sans-serif;
-    padding: 50% 16% 0 0;
-  }
-  p {
-    font-size: 1em;
-    font-family: Open Sans, sans-serif;
-    text-align: start;
-    line-height: 1.7em;
-    padding: 7% 1% 0 14%;
-  }
-}
+//@mixin background-linear-gradient($where, $firstColor, $lastColor) {
+//  background: linear-gradient($where, $firstColor, $lastColor);
+//}
+//
+//
+//
+//.card-1 {
+//  background: #ffffff;
+//  padding: 3.6% 0 0 0;
+//  img {
+//    width: 110px;
+//    height: 98px;
+//  }
+//  h3{
+//    padding: 11% 0 0 1%;
+//    font-size: 1.35em;
+//  }
+//  p{
+//    font-size: 1.15em;
+//    padding: 7% 15% 8.3% 16%;
+//    letter-spacing: -.02em;
+//    line-height: 1.65em;
+//  }
+//  button{
+//    width: 130px;
+//    height: 45px;
+//    background: none;
+//    box-shadow: 0 0 1px 1px grey;
+//  }
+//}
+//
+//.card-2 {
+//  position: relative;
+//  width: 260px;
+//  height: 290px;
+//  @include background-linear-gradient(to top right, #41aedc, #06f0f3);
+//  * {
+//    color: #ffffff;
+//
+//  }
+//  img {
+//    position: absolute;
+//    width: 63px;
+//    height: 50px;
+//    left: 14%;
+//    top: 18%;
+//  }
+//  h3 {
+//    font-size: 1.375em;
+//    font-family: Poppins, sans-serif;
+//    padding: 50% 16% 0 0;
+//  }
+//  p {
+//    font-size: 1em;
+//    font-family: Open Sans, sans-serif;
+//    text-align: start;
+//    line-height: 1.7em;
+//    padding: 7% 1% 0 14%;
+//  }
+//}
 
 /*
 <div class="card">

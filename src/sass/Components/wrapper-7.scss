@@ -2,7 +2,7 @@
   background: linear-gradient($where, $firstColor, $lastColor);
 }
 .container .wrapper-7{
-  padding: 2% 0 0 0;
+  padding: 2% 0 5% 0;
   .row{
     display: flex;
     flex-direction: row;
@@ -54,9 +54,10 @@
             height: 50px;
           }
           h3{
-            padding:0 0 0 9%;
+            padding: 1% 0 0 9%;
             font-size: 1.3em;
-            line-height: 1em;
+            line-height: 1.3em;
+
           }
           span{
             padding: 9% 0 0 31%;
@@ -89,7 +90,7 @@
               border-radius: 50%;
               @include background-linear-gradient(to top right, #2fc6d3, #1ae3bc);
               height: 65px;
-              width: 65px;
+              width: 63px;
               display: flex;
               justify-content: center;
               align-items: center;
@@ -102,6 +103,8 @@
             span:last-child{
               display: flex;
               flex-wrap: wrap;
+              width: 164px;
+              height: 63px;
               padding: 0 0 0 9%;
               line-height: 1.4em;
               letter-spacing: 0.06em;
