@@ -1,7 +1,7 @@
 //@mixin background-linear-gradient($where, $firstColor, $lastColor) {
 //  background: linear-gradient($where, $firstColor, $lastColor);
 //}
-//
+//@include background-linear-gradient(to top right, #41aedc, #06f0f3);
 //
 //
 //.card-1 {
@@ -27,6 +27,9 @@
 //    background: none;
 //    box-shadow: 0 0 1px 1px grey;
 //  }
+//    button:hover{
+//      box-shadow: 2px 1px 4px 0 #000;
+//    }
 //}
 //
 //.card-2 {

@@ -1,41 +1,112 @@
+@mixin background-linear-gradient($where, $firstColor, $lastColor) {
+  background: linear-gradient($where, $firstColor, $lastColor);
+}
+
 .container .wrapper-8{
   padding: 5% 0 0 0;
   .row{
     min-height: 545px;
     .card-1 {
       padding: 8% 0 0 1%;
-      background: rgba(0, 0, 0, 0.3 );
+      background: rgba(0, 0, 0, 0.3);
       width: 100%;
       height: 100%;
-
+      background: none;
       h3{
+        font-size: 1.5em;
 
-        font-size: 1em;
+
       }
       p{
         font-size: 1em;
       }
       button{
-        width: 130px;
-        height: 45px;
+        width: 151px;
+        height: 53px;
         background: none;
-        box-shadow: 0 0 1px 1px grey;
+        font-size: 1.25em;
+      }
+      button:hover{
+        box-shadow: 2px 1px 4px 0 #000;
       }
     }
     .cols:first-child{
       .card-1 {
         text-align: start;
+        h3{
+          font-family: Open Sans,sans-serif;
+          font-size: 1.2em;
+          color: #b4b6b8;
+          text-transform: uppercase;
+          letter-spacing: 0.04em;
+        }
+        h1{
+          font-family: Poppins, sans-serif;
+          font-size: 2.7em;
+          padding: 4% 14% 0 0;
+          line-height: 1.3em;
+          letter-spacing: 0.01em;
+        }
+        p{
+          color: #7d7f83;
+          padding: 8% 21% 0 0;
+          word-spacing: 0.3em;
+          letter-spacing: 0.04em;
+          line-height: 2em;
+        }
+        div{
+          padding: 7.9% 0 0 0;
+          button:first-child{
+            @include background-linear-gradient(to top right, #6d69ff, #5f9bff);
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+            color: #dde4ff;
+          }
+          button:last-child{
+            border-top-right-radius: 25px;
+            border-bottom-right-radius: 25px;
+            background: #f3f8fa;
+          }
+        }
       }
     }
     .cols:last-child{
       position: relative;
       .card-1{
-        //background: #fff;
+        background: #fff;
       }
       .card-1:first-child{
         position: relative;
         z-index: 1;
         width: 63%;
+        h3{
+          font-size: 1.1em;
+          text-transform: uppercase;
+          padding: 1% 0.6% 0 0;
+        }
+        h4{
+          padding: 3% 1% 0 0;
+          color: #b1b1b1;
+          font-size: 1.2em;
+        }
+        .price{
+          padding: 13% 0 0 9%;
+          font-size: 3.8em;
+          font-weight: 600;
+        }
+        p{
+          padding: 16% 0 0;
+          line-height: 2.45em;
+          font-size: 1em;
+          color: #b1b1b1;
+        };
+        button{
+          margin: 11% 0 0 0;
+          height: 40px;
+          border-radius: 20px;
+          font-size: 1em;
+          border: 1px solid grey;
+        }
       }
       .card-1:last-child{
         position: absolute;
@@ -43,8 +114,39 @@
         height: 81%;
         top: 10%;
         left: 38%;
+        display: block;
         z-index: 0;
+        h3{
+          font-size: 0.8em;
+          text-transform: uppercase;
+        }
+        h4{
+          color: #b1b1b1;
+          font-size: 1em;
+        }
+        .price{
+          padding: 10% 0 0 12%;
+          font-size: 2.9em;
+          font-weight: 600;
+        }
+        p{
+          padding: 19% 0 0;
+          line-height: 1em;
+          font-size: .9em;
+          color: #b1b1b1;
+        };
+        button{
+          margin: 12% 0 0;
+          height: 33px;
+          width: 120px;
+          border-radius: 20px;
+          font-size: .8em;
+          border: 1px solid grey;
+        }
       }
     }
   }
 }
+
+//font-family: Poppins, sans-serif;
+//font-family: Open Sans, sans-serif;

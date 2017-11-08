@@ -23,6 +23,9 @@
         background: none;
         box-shadow: 0 0 1px 1px grey;
       }
+      button:hover{
+        box-shadow: 2px 1px 4px 0 #000;
+      }
     }
     .cols:first-child {
       padding: 2.6% 0 0 0;
