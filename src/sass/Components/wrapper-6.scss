@@ -1,0 +1,29 @@
+.container .wrapper-6{
+  padding: 5.9% 0;
+  .row{
+    .cols {
+      margin: 0 0 0 33%;
+      padding: 0 0 0 9%;
+      span {
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        h3 {
+          line-height: 1.5em;
+          text-transform: uppercase;
+          font-family: Open Sans, sans-serif;
+          font-size: 1.125em;
+          letter-spacing: 0.1em;
+          color: #b2b2b2;
+        }
+        h1 {
+          padding: 3% 0 0 0.9%;
+          word-spacing: 0.1em;
+          line-height: 1.45em;
+          font-family: Poppins,sans-serif;
+          font-size: 2.625em;
+        }
+      }
+    }
+  }
+}
