@@ -45,5 +45,26 @@
         }
       }
     }
+    .cols:last-child{
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      img{
+        width: 306px;
+        height: 509px;
+        z-index: 1;
+      }
+      span{
+        background: url("../../img/1231414.png") no-repeat;
+        background-size: 100% 100%;
+        position: absolute;
+        width: 526px;
+        height: 855px;
+        bottom: -179px;
+        left: -107px;
+        z-index: 0;
+      }
+    }
   }
 }
